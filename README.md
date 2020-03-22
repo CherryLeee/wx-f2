@@ -25,7 +25,7 @@ F2 的微信小程序版本，支持原生 [F2](https://f2.antv.vision/) 的所�
 ## 没有package.json时执行下面这段
 ## echo "{}" > package.json
 
-npm install @antv/wx-f2 --save
+npm install wx-f2 --save
 ```
 
 安装好依赖包之后，点击工具顶部菜单栏的详情：
@@ -51,14 +51,14 @@ rm -rf node_modules/@babel/runtime
 ```json
 {
   "usingComponents": {
-    "f2": "@antv/wx-f2"
+    "f2": "wx-f2"
   }
 }
 ```
 
 #### 2. wxml 使用组件
 ```xml
- <f2 class="f2" data="{{data}}" bind:draw="draw" />
+  <f2 class="f2" data="{{data}}" bind:draw="draw" />
 ```
 
 #### 3. wxss 设置宽高
@@ -123,8 +123,8 @@ Page({
 
 ## 如何贡献
 
-如果您在使用的过程中碰到问题，可以先通过 [issues](https://github.com/antvis/wx-f2/issues) 看看有没有类似的 bug 或者建议。
+如果您在使用的过程中碰到问题，可以先通过 [issues](https://github.com/WangJiangJiaoZi/wx-f2/issues) 看看有没有类似的 bug 或者建议。
 
 ## License
 
-[MIT license](https://github.com/antvis/wx-f2/blob/master/LICENSE)
+[MIT license](https://github.com/WangJiangJiaoZi/wx-f2/blob/master/LICENSE)

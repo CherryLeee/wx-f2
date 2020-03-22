@@ -1,6 +1,6 @@
 {
-  "name": "@antv/wx-f2",
-  "version": "2.1.0",
+  "name": "wx-f2",
+  "version": "3.0.1",
   "description": "F2 for weixin mini-program",
   "main": "dist/index.js",
   "scripts": {
@@ -23,8 +23,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/wx-f2"
+    "url": "https://github.com/WangJiangJiaoZi/wx-f2"
   },
-  "author": "sima.zhang1990@gmail.com",
+  "author": "dada1253@yeah.net",
   "license": "MIT"
 }
