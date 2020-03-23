@@ -11,7 +11,7 @@ Component({
         const { data: { showImage }, chart, node, triggerEvent } = this;
         if (chart) {
           chart.changeData(data);
-          triggerEvent('updata', { data, chart, node });
+          triggerEvent('update', { data, chart, node });
           if (showImage) {
             this.setData({
               dataURL: node._canvasRef.toDataURL('image/png')
@@ -21,6 +21,16 @@ Component({
           this.init();
         }
       }
+    },
+    // 图表绘图区域和画布边框的间距，用于显示坐标轴文本、图例
+    padding: {
+      type: null,
+      value: 'auto'
+    },
+    // 图表画布区域四边的预留边距，即我们会在 padding 的基础上，为四边再加上 appendPadding 的数值
+    appendPadding: {
+      type: null,
+      value: 0
     },
     // 是否显示为图片
     showImage: {
@@ -46,7 +56,7 @@ Component({
           size: true
         })
         .exec(res => {
-          const { data: { data, showImage }, triggerEvent } = this;
+          const { data: { data, padding, appendPadding, showImage }, triggerEvent } = this;
           const { node, width, height } = res[0];
           const context = node.getContext('2d');
           const pixelRatio = wx.getSystemInfoSync().pixelRatio;
@@ -54,7 +64,7 @@ Component({
           node.width = width * pixelRatio;
           node.height = height * pixelRatio;
 
-          const config = { context, width, height, pixelRatio };
+          const config = { context, width, height, pixelRatio, padding, appendPadding };
           const chart = new F2.Chart(config);
 
           triggerEvent('draw', { data, chart, node });
