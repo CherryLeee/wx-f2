@@ -87,15 +87,16 @@ Page({
   draw ({ detail: { chart, data } }) {
     chart.source(data, {
       date: {
-        range: [0, 1]
+        range: [0.05, 0.95]
       }
     })
     chart.legend('type', {
       align: 'right',
       itemWidth: 80
     })
-    chart.area().shape('smooth').position('date*value').color('type', ['l(90) 0:#de5341 1:#ffffff', 'l(90) 0:#4a81ed 1:#ffffff'])
     chart.line().shape('smooth').position('date*value').color('type', ['#de5341', '#4a81ed'])
+    chart.area().shape('smooth').position('date*value')
+      .color('type', ['l(90) 0:#de5341 1:#ffffff', 'l(90) 0:#4a81ed 1:#ffffff'])
 
     // 无需render
   }
@@ -107,7 +108,9 @@ Page({
 |参数|说明|类型|默认值|
 |:-|:-|:-|:-|
 |data|数据源(修改data会自动更新图表)|Array|[]|
-|show-image|是否以图片显示|boolean|false|
+|padding|图表绘图区域和画布边框的间距|String/Number/Array|"auto"|
+|append-padding|图表画布区域四边的预留边距|Number/Array|0|
+|show-image|是否以图片显示|Boolean|false|
 
 ### Events
 
@@ -115,7 +118,7 @@ Page({
 |:-|:-|
 |draw|chart绘制|
 |reload|chart绘制完成|
-|updata|数据更新|
+|update|数据更新|
 
 ## f2 API
 
