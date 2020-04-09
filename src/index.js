@@ -1,5 +1,6 @@
 
 import F2 from '@antv/f2';
+F2.Global.fontFamily = 'sans-serif';
 
 Component({
   properties: {
